@@ -1,0 +1,1 @@
+Java code examples used live in class to demonstrate key concepts like classes, objects, inheritance, interfaces, and UML. Meant for learning and experimentation, not full projects. Repository is a reference for in-class demonstrations.
