@@ -30,7 +30,7 @@ Inheritance
 19. Constructor Chaining (`super()`)
 20. The `super` Keyword (super. in method)
 21. Method Overriding
-22. Abstract Methods (stopped here section11)
+22. Abstract Methods
 23. Object Casting (Upcasting, Downcasting)
 
 Polymorphism
@@ -46,7 +46,7 @@ Interfaces & Abstract Classes
 29. Implementing Multiple Interfaces
 30. The `Comparable<T>` Interface (`compareTo`)
 31. The `Cloneable` Interface (`clone`)
-Note: make sure to also show the array of comparable objects even if they are not 
+Note: The array of comparable objects even if they are not 
 the same type of objects, like edible. 
 
 Generics
