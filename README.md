@@ -13,7 +13,7 @@ Classes & Objects
 8 - Class abstraction and encapsulation  
 9 - Static variables and methods
 10 - Constants (static final)  
-   - Visibility modifiers  (public (+) - protected (#) - package(~) - private(-)) )
+Visibility modifiers  (public (+) - protected (#) - package(~) - private(-)) )
 11 - Getter and setter methods  
 12 - Arrays of objects  
 13 - Immutable objects 
