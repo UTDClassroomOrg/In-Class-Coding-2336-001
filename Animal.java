@@ -15,21 +15,21 @@ public abstract class Animal implements Comparable<Animal>, Cloneable {
 		//		this.setSpeed(1);
 		//		numberOfAnimals++;
 		this(1);
-		System.out.println("(1) constructor");
+		//System.out.println("(1) constructor");
 
 	}
 	public Animal(double speed) { //custom
 		//		this.setSpeed(speed);
 		//		numberOfAnimals++;
 		this("def", speed);
-		System.out.println("(2) constructor");
+		//System.out.println("(2) constructor");
 	}
 	public Animal(String name, double speed) { //custom
 		//this.name = name;
 		this.setName(name);
 		this.setSpeed(speed);
 		Animal.setNumberOfAnimals();
-		System.out.println("(3) constructor");
+		//System.out.println("(3) constructor");
 
 		//Animal.numberOfAnimals++;
 	}
@@ -102,7 +102,7 @@ public abstract class Animal implements Comparable<Animal>, Cloneable {
 	}
 
 
-	abstract void makeSound();// {
+	abstract String makeSound();// {
 	//		System.out.println("Animal sounds");//dummy
 	//	}
 
@@ -118,14 +118,13 @@ class Cat extends Animal implements Jumper, Runner{
 	}
 
 	@Override
-	void makeSound() {
-		System.out.println("meuww");
+	String makeSound() {
+		return "meuww";
 	}
 
 	@Override
 	public String toString() {
-		this.makeSound();
-		return super.toString();
+		return this.makeSound() + "-" + super.toString();
 	}
 	@Override
 	public void jump() {
@@ -150,14 +149,13 @@ class Dog extends Animal implements Jumper, Runner{
 	}
 
 	@Override
-	void makeSound() {
-		System.out.println("Wolfff!");
+	String makeSound() {
+		return "Wolfff!";
 	}
 
 	@Override
 	public String toString() {
-		this.makeSound();
-		return super.toString();
+		return this.makeSound() + "- " + super.toString();
 	}
 
 	@Override
@@ -174,19 +172,20 @@ class Bird extends Animal{
 	Bird(){
 
 	}
+	
+	
 	Bird(String name, double speed){
 		super(name,speed);
 	}
 
 	@Override
-	void makeSound() {
-		System.out.println("CAW!");
+	String makeSound() {
+		return "CAW!";
 	}
 
 	@Override
 	public String toString() {
-		this.makeSound();
-		return super.toString();
+		return this.makeSound() + "-" +super.toString();
 	}
 
 
@@ -206,7 +205,26 @@ interface Runner {
 
 }
 
-
+class Athlete<T extends Runner & Jumper>{ // Example of Multiple Bounds (<T extends A & B>)
+	private T participant;
+	
+	Athlete(T participant){
+		this.participant = participant;
+	}
+	
+	public void perform() {
+		participant.run();
+		participant.jump();
+	}
+	
+	// T must implement both Runner and Jumper
+    public static <T extends Runner & Jumper> T train(T animal) {
+        System.out.println("Training...");
+        animal.run();
+        animal.jump();
+        return animal; // returning T
+    }
+}
 
 
 
