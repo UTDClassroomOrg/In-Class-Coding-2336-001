@@ -1,24 +1,23 @@
 Java code examples used live in class to demonstrate key concepts like classes, objects, inheritance, interfaces, and UML. Meant for learning and experimentation, not full projects. Repository is a reference for in-class demonstrations.
 
-Topics:
+Topics: 
 Classes & Objects
 
-1 - Defining classes and objects  
-2 - Instance variables and methods  
-3 - Constructors (default, overloaded) 
-4 - Constructor chaining (this())  
-5 - The this keyword  
-6 - Accessing objects and fields (. operator or access modifier)  
-7 - UML basics (class diagrams)  
-8 - Class abstraction and encapsulation  
-9 - Static variables and methods
-10 - Constants (static final)  
-10.1 - Visibility modifiers  (public (+) - protected (#) - package(~) - private(-)) )
-11 - Getter and setter methods  
-12 - Arrays of objects  
-13 - Immutable objects 
-14 - The toString() method 
-15 - The equals() method 
+1. Defining classes and objects  
+2. Instance variables and methods  
+3. Constructors (default, overloaded) 
+4. Constructor chaining (this()) 
+5. The this keyword  
+6. Accessing objects and fields (. operator or access modifier)  
+7. UML basics (class diagrams)
+8. Class abstraction and encapsulation  
+9. Static variables and methods
+10. Constants (static final)
+11. Visibility modifiers  public '+' protected '#' package '~'  private '-'
+12. Getter and setter methods  
+13. Arrays of objects  
+14. Immutable objects 
+15. The toString() and equals() method 
 
 ---
 
