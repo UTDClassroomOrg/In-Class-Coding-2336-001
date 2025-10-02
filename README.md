@@ -13,7 +13,7 @@ Classes & Objects
 8. Class abstraction and encapsulation  
 9. Static variables and methods
 10. Constants (static final)
-11. Visibility modifiers  public '+' protected '#' package '~'  private '-'
+11. Visibility modifiers  public `+` protected `#` package `~`  private `-`
 12. Getter and setter methods  
 13. Arrays of objects  
 14. Immutable objects 
@@ -31,11 +31,15 @@ Inheritance
 21. Method Overriding
 22. Abstract Methods
 23. Object Casting (Upcasting, Downcasting)
+    
+---
 
 Polymorphism
 
 24. Polymorphism (Dynamic Binding)
 25. The `instanceof` Operator (more example..)
+    
+---
 
 Interfaces & Abstract Classes
 
@@ -47,6 +51,8 @@ Interfaces & Abstract Classes
 31. The `Cloneable` Interface (`clone`)
 Note: The array of comparable objects even if they are not 
 the same type of objects, like edible. 
+    
+---
 
 Generics
 
