@@ -1,6 +1,6 @@
 Java code examples used live in class to demonstrate key concepts like classes, objects, inheritance, interfaces, and UML. Meant for learning and experimentation, not full projects. Repository is a reference for in-class demonstrations.
 
-Topics: 
+Topics:
 Classes & Objects
 
 1. Defining classes and objects  
@@ -29,7 +29,7 @@ Inheritance
 19. Constructor Chaining (`super()`)
 20. The `super` Keyword (super. in method)
 21. Method Overriding
-22. Abstract Methods
+22. Abstract Methods 
 23. Object Casting (Upcasting, Downcasting)
     
 ---
@@ -49,8 +49,8 @@ Interfaces & Abstract Classes
 29. Implementing Multiple Interfaces
 30. The `Comparable<T>` Interface (`compareTo`)
 31. The `Cloneable` Interface (`clone`)
-Note: The array of comparable objects even if they are not 
-the same type of objects, like edible. 
+Note: Show the array of comparable objects even if they are not 
+the same class of objects, like edible. 
     
 ---
 
@@ -67,4 +67,39 @@ Generics
 40. Wildcards – Lower Bounded (`<? super T>`)
 41. Generic Collections (`ArrayList<T>`, `HashMap<K,V>`)
 42. Restrictions and Limitations of Generics
+    
+---
+**//All the topics under Lists, Stacks, Queues, and Priority Queues are part of the list package/folder.**
 
+Lists, Stacks, Queues, and Priority Queues (inside the list package)
+
+Data Structures Overview
+
+43. Definition and Importance of Data Structures
+44. Basic Operations: Insertion, Deletion, Traversal
+
+Lists
+
+45. ArrayList and LinkedList
+46. Implementations and Use Cases
+47. Differences Between ArrayList and LinkedList
+
+Stacks
+
+48. Definition and Operations: Push, Pop, Peek
+49. Applications of Stacks
+
+Queues
+
+50. Definition and Operations: Enqueue, Dequeue
+51. Applications of Queues
+
+Priority Queues
+
+52. Definition and Operations
+53. Use Cases and Implementations
+
+Implementations
+
+54. Designing and Implementing Dynamic Lists Using Linked Structures
+55. Implementing Stack and Queue Classes Using Arrays and Linked Lists
