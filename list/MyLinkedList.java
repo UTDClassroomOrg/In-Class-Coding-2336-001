@@ -1,32 +1,20 @@
 package list;
 
-public class MyLinkedList {
-	MyNode first;
-	MyNode last;
-	int size;
+public class MyLinkedList implements MyList {
+	private MyNode first;
+	private MyNode last;
+	private int size;
 
 	public int getSize() {
 		return this.size;
 	}
 
 	public boolean isEmpty() {
-		//return this.size == 0;
-		return first == null; 
+		//return this.size == 0 ;
+		return first == null;
 	}
 
-	public String getFirstElement() {
-		if(!isEmpty())
-			return first.element;
-		return null;
-	}
-
-	public String getLastElement() {
-		if(!isEmpty())
-			return last.element;
-		return null;
-	}
-
-	public void addFirst(String s) { //O(1)
+	public void addFirst(String s) { // O(1)
 		MyNode newNode = new MyNode(s);
 		if(isEmpty()) {
 			last = newNode;
@@ -34,7 +22,7 @@ public class MyLinkedList {
 			newNode.next = first;
 		}
 		first = newNode;
-		size++;	
+		size++;
 	}
 
 	public void addLast(String s) { //O(1)
@@ -52,6 +40,8 @@ public class MyLinkedList {
 		if(!isEmpty()) {
 			String temp = first.element;
 			if(first == last) { //only one element in this list
+				//				first = first.next;
+				//				last = null;
 				first = last = null;
 			}else {
 				first = first.next;
@@ -59,7 +49,7 @@ public class MyLinkedList {
 			size--;
 			System.out.println(temp + " is removed!");
 		}else {
-			System.out.println("List is Empty!");
+			System.out.println("List is empty!");
 		}
 	}
 
@@ -79,10 +69,10 @@ public class MyLinkedList {
 			size--;
 			System.out.println(temp + " is removed!");
 		}else {
-			System.out.println("List is Empty!");
+			System.out.println("List is empty!");
 		}
 	}
-
+	
 	public void remove(String key) { //O(n)
 		if(search(key)) {
 			MyNode curr = first;
@@ -92,7 +82,7 @@ public class MyLinkedList {
 				curr = curr.next;
 			}
 			if(curr == first) removeFirst();
-			else if (curr == last) removeLast();
+			else if(curr == last) removeLast();
 			else {
 				prev.next = curr.next;
 				size--;
@@ -101,9 +91,9 @@ public class MyLinkedList {
 		}else {
 			System.out.println(key + " is not in the list!");
 		}
-
 	}
-
+	
+	
 	public boolean search(String key) { //O(n)
 		MyNode pointer = first;
 		while(pointer!=null && !pointer.element.equals(key)) {
@@ -111,8 +101,8 @@ public class MyLinkedList {
 		}
 		return pointer!=null;
 	}
-
-	public int find(String key) { //O(n) linear search
+	
+	public int find(String key) { //O(n)
 		int counter = -1;
 		if(search(key)) {
 			counter++;
@@ -123,12 +113,13 @@ public class MyLinkedList {
 			}
 		}
 		return counter;
+	
 	}
-
+	
 	public String getElement(int index) { //O(n)
 		if(index >= 0 && index < size) {
 			if(index == 0) return getFirstElement();
-			else if(index == size - 1) return getLastElement();
+			else if (index == size - 1) return getLastElement();
 			else {
 				int counter = 0;
 				MyNode pointer = first;
@@ -142,20 +133,29 @@ public class MyLinkedList {
 			return null;
 		}
 	}
-
-	public void print(){
-		MyNode pointer = first;
-		if(!isEmpty()){
-			System.out.print("| ");
-			while(pointer!=null){
-				System.out.print(pointer.element + " | ");
-				pointer = pointer.next;
-			}
-			System.out.println();
-		}
+	
+	private String getFirstElement() {
+		if(!isEmpty()) return first.element;
+		return null;
 	}
-}
+	
+	private String getLastElement() {
+		if(!isEmpty()) return last.element;
+		return null;
+	}
 
+	public void print() {
+		MyNode pointer = first;
+		while(pointer!=null) {
+			System.out.print(pointer.element + " | ");
+			pointer = pointer.next;
+		}
+		System.out.println();
+	}
+	
+
+
+}
 
 class MyNode{
 	String element;
