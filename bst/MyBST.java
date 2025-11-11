@@ -10,7 +10,7 @@ public class MyBST<E extends Comparable<E>> {
 		return root == null;
 	}
 
-	public boolean search(E element) {
+	public boolean search(E element) {// if the BST is balanced O(lgn)
 		MyTreeNode<E> current = root;
 		while(current != null) {
 			if(element.compareTo(current.element) < 0) {
@@ -24,7 +24,7 @@ public class MyBST<E extends Comparable<E>> {
 		return false;
 	}
 
-	public boolean insert(E element) {
+	public boolean insert(E element) { // if the BST is balanced O(lgn)
 		MyTreeNode<E> newTreeNode = new MyTreeNode<E>(element);
 
 		if(!isEmpty()) {
@@ -54,7 +54,7 @@ public class MyBST<E extends Comparable<E>> {
 
 		return true;
 	}
-	private void bfs() {
+	private void bfs() { //O(n)
 		if(!isEmpty()) {
 			Queue<MyTreeNode<E>> queue = new LinkedList<MyTreeNode<E>>();
 			queue.add(root);
@@ -73,25 +73,28 @@ public class MyBST<E extends Comparable<E>> {
 		}
 	}
 
-
-	private void dfs() {
+	//	inorder :  LMR
+	//	pre-Order: MLR
+	//	pre-Order: LRM
+	
+	private void dfs() { //O(n)
 		dfs(root);
 	}
-	private void dfs(MyTreeNode<E> current) {
+	private void dfs(MyTreeNode<E> current) { //in-order
 		if(current != null) {
-			dfs(current.left);
-			System.out.print(current.element + " ");
-			dfs(current.right);
-		}
+			dfs(current.left); //L
+			System.out.print(current.element + " "); //M
+			dfs(current.right); //R
+	}
 	}
 
 	public void print() {
 		dfs();
+		System.out.println();
 		//bfs();
 	}
 
-	/*Will be completed on Mon Nov 10th
-	 * public boolean delete(E element) {
+	 public boolean delete(E element) { // if the BST is balanced O(lgn)
 		if(!isEmpty()) {
 			MyTreeNode<E> current = root;
 			MyTreeNode<E> parent = root;
@@ -107,8 +110,10 @@ public class MyBST<E extends Comparable<E>> {
 					break;
 				}
 			}
-
-			if(current.left == null) { //case 1
+			
+			if(current == null) return false; //The element is not in the BST
+			
+			else if(current.left == null) { //case 1
 				if (current == root) { //c
 					root = root.right;
 				}else {
@@ -119,15 +124,32 @@ public class MyBST<E extends Comparable<E>> {
 					}
 				}
 			} // end of case 1
-		} 
-	}*/
+			else{ //case 2
+				MyTreeNode<E> rightMost = current.left;
+				MyTreeNode<E> parentOfRightMost = current;
+				
+				while(rightMost.right != null) {
+					parentOfRightMost = rightMost;
+					rightMost = rightMost.right;
+				}
+				
+				current.element = rightMost.element; //removed the current
+				
+				if(rightMost.equals(current.left)) {
+					parentOfRightMost.left = rightMost.left; //b
+				}else {
+					parentOfRightMost.right = rightMost.left; //a
+				}
+			}// end of the case 2
+			return true;
+		}
+		return false; // the BST is empty
+	}
 
 	
 
 
-	//	inorder :  LMR
-	//	pre-Order: MLR
-	//	pre-Order: LRM
+
 
 }
 class MyTreeNode<E>{
