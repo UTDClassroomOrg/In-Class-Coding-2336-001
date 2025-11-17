@@ -94,7 +94,7 @@ public class MyArrayList<E> implements MyList<E> {
 		if(capacity > 2) {
 			this.capacity = capacity;
 			Object[] temp = list;
-			list = new String[this.capacity];
+			list = new Object[this.capacity];
 			for(int i = 0; i < size; i++) {
 				list[i] = temp[i];
 			}
