@@ -5,7 +5,7 @@ import java.util.List;
 
 /*using AdjacencyList
 - Store neighbors as: new Edge(to, weight)
-- For unweighted graphs, weight = 1
+- For Unweighed graphs, weight = 1
 - For undirected graphs, add two edges
 - For directed graphs, add one edge
 */
@@ -61,7 +61,7 @@ class Edge{
 	public Edge(int src, int des) {
 		this.src = src;
 		this.des = des;
-		this.weight = 1; //unweighted graph
+		this.weight = 1; //Unweighed graph
 	}
 	
 	@Override
